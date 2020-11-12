@@ -19,10 +19,10 @@ describe("Send message", () => {
 
     beforeAll(async () => {
         // Run test on local machine without moon
-        // browser = await playwright.chromium.launch({headless: false});
+        browser = await playwright.chromium.launch({headless: false});
 
         // Run test with moon deployed in DO
-        browser = await playwright.chromium.connect({wsEndpoint:'ws://68.183.240.56:4444/playwright/chromium'});
+        // browser = await playwright.chromium.connect({wsEndpoint:'ws://68.183.240.56:4444/playwright/chromium'});
 
         const context = await browser.newContext();
 
