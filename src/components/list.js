@@ -17,7 +17,7 @@ class List {
         const classAttribute = await elementUtils.getAttribute(this.componentName, this.page, selectorUtils.getXpathSelectorOfCollapseExpandIcon(this.listName), "class");
 
         if (!classAttribute.includes("expandable")) {
-            return await elementUtils.clickOn(this.componentName, this.page, selectorUtils.getXpathSelectorOfCollapseExpandIcon(this.listName), "expand list of folders");
+            await elementUtils.clickOn(this.componentName, this.page, selectorUtils.getXpathSelectorOfCollapseExpandIcon(this.listName), "expand list of folders");
         }
         await Promise.resolve("This list has been already expanded");
 
@@ -27,7 +27,7 @@ class List {
         const classAttribute = await elementUtils.getAttribute(this.componentName, this.page, selectorUtils.getXpathSelectorOfCollapseExpandIcon(this.listName), "class");
 
         if (classAttribute.includes("collapsible")) {
-            return await elementUtils.clickOn(this.componentName, this.page, selectorUtils.getXpathSelectorOfCollapseExpandIcon(this.listName), "collapse list of folders");
+            await elementUtils.clickOn(this.componentName, this.page, selectorUtils.getXpathSelectorOfCollapseExpandIcon(this.listName), "collapse list of folders");
         }
         await Promise.resolve("This list has been already collapsed");
 
@@ -41,7 +41,11 @@ class List {
     }
 
     async getCount (optionName) {
-        return await elementUtils.getTextContent(this.componentName, this.page, selectorUtils.getXpathSelectorOfCountElement(this.listName, optionName));
+        return elementUtils.getTextContent(
+            this.componentName,
+            this.page,
+            selectorUtils.getXpathSelectorOfCountElement(this.listName, optionName)
+        );
     }
 }
 

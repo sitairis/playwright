@@ -9,7 +9,7 @@ class MessageBoard {
     }
 
     async getBoardText () {
-        return await elementUtils.getTextContent(this.componentName, this.page, "//*[@class='emptyDivText']");
+        return elementUtils.getTextContent(this.componentName, this.page, "//*[@class='emptyDivText']");
     }
 }
 

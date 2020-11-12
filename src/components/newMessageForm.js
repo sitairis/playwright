@@ -30,15 +30,15 @@ class NewMessageForm {
     }
 
     async getToFieldText () {
-        return await elementUtils.getInnerText(this.componentName, this.page, "xpath=//*[@class='mail-id'][1]//div[@class='contacts-value-text-style']");
+        return elementUtils.getInnerText(this.componentName, this.page, "xpath=//*[@class='mail-id'][1]//div[@class='contacts-value-text-style']");
     }
 
     async getCcFieldText () {
-        return await elementUtils.getInnerText(this.componentName, this.page, "xpath=//*[@class='mail-id'][2]//div[@class='contacts-value-text-style']");
+        return elementUtils.getInnerText(this.componentName, this.page, "xpath=//*[@class='mail-id'][2]//div[@class='contacts-value-text-style']");
     }
 
     async getTextFieldText () {
-        return await elementUtils.getInnerText(this.componentName, this.page, "//*[@id='mailContentMessage']");
+        return elementUtils.getInnerText(this.componentName, this.page, "//*[@id='mailContentMessage']");
     }
 
     async fillInCcField () {

@@ -19,7 +19,7 @@ class MessagePane {
     }
 
     async getFilterPaneLabel () {
-        return await elementUtils.getTextContent(this.componentName, this.page, "//*[@id='spanFilterText']");
+        return elementUtils.getTextContent(this.componentName, this.page, "//*[@id='spanFilterText']");
     }
 }
 
